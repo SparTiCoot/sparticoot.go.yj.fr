@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Bitter', sans-serif;
+    background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%); /* Exemple de dégradé */
+    color: #333; /* Couleur du texte */
+}

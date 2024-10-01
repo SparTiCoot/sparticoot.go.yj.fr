@@ -1,0 +1,163 @@
+.section {
+  /* background: linear-gradient(to bottom, #15aba8 75%, #acd2d1 85%, #dfdfdf 95%); */
+  background-color: #2a5e5d;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.presentation {
+  height: 75%;
+}
+
+.footer {
+  height: 30%;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 2px solid red; */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.footerheader-container {
+  display: flex;
+  justify-content: center;  /* Centre horizontalement */
+  align-items: center;      /* Centre verticalement */
+  width: 100%;              /* Prend la largeur totale de l'écran */
+  height: 100%;             /* S'adapte à la hauteur du conteneur */
+  position: relative;
+  
+}
+
+.footerheader-svg {
+  width: 100vw;             /* Prend toute la largeur de l'écran */
+  height: auto;             /* Ajuste la hauteur automatiquement */
+}
+
+.icon-item, .img-item, .text-item {
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, and a basis of 300px */
+  margin: 10px; /* Space between items */
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .icon-item {
+    flex-direction: row;
+  }
+}
+
+.animated-left-cubes-group {
+  position: absolute;
+  transform: translate(-32vw, 17vw);
+}
+
+.animated-right-cubes-group {
+  position: absolute;
+  transform: translate(10vw, 5vw);
+}
+
+.animated-white-cube,
+.animated-pink-cube,
+.vincent-character {
+  transform-origin: center;
+}
+
+.vincent-character {
+  transform-origin: center;
+  width: 15vw;
+  height: auto;
+  position: absolute;
+  top: 20vw;
+  left: 50vw;
+  translate: -50% -50%;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  left: 20vw;
+  font-size: 2.2rem;
+  padding-right: 1vw;
+}
+
+h2 {
+  position: absolute;
+  right: 25vw;
+  top: 30vw;
+  color: white;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+.title-1 {
+  top: 9vw;
+}
+
+.title-2 {
+  top: 12vw;
+}
+
+.word-1 {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.word-2 {
+  font-style: normal;
+  font-weight: lighter;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.75rem; /* Taille pour les tablettes */
+  }
+  .vincent-character {
+    width: 10vw;
+    height: auto;
+  }
+  h2 {
+    font-size: 1.5rem; /* Taille pour les tablettes */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Taille pour les mobiles */
+  }
+  h2 {
+    font-size: 1.25rem; /* Taille pour les mobiles */
+  }.vincent-character {
+    width: 10vw;
+    height: auto;
+  }
+  .section {
+    flex-direction: column;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.25rem; /* Taille pour les petits mobiles */
+  }
+  h2 {
+    font-size: 1rem; /* Taille pour les petits mobiles */
+  }.vincent-character {
+    width: 10vw;
+    height: auto;
+  }
+}
+
+
