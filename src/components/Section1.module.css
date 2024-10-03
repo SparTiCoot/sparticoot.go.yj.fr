@@ -101,35 +101,119 @@ h1 {
 @media (max-width: 1280px) {
   
 }
-
-@media (max-width: 1024px) {
- 
-}
 */
+
+@media (max-width: 1024px),
+(min-width: 1024px) {
+  .presentation {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .presentation>div {
+    border: 2px solid rgb(160, 109, 43);
+    border-radius: 5px;
+  }
+
+  .text-item {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .img-item {
+    flex-basis: 100%
+  }
+
+  .icon-item {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .vincent-character {
+    width: 15vw;
+    top: 50%;
+    border: 2px solid red;
+  }
+
+  .animated-left-cubes-group {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: initial;
+    right: initial;
+  }
+
+  .animated-left-cubes-group img {
+    width: 20vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .animated-right-cubes-group {
+    position: relative;
+    top: initial;
+    left: initial;
+  }
+
+  .animated-right-cubes-group img {
+    width: 20vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .footer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* Place l'image en bas de la div */
+    width: 100%;
+    height: auto;
+    /* Hauteur fixe ou auto */
+    border: 1px solid black;
+    /* Pour visualiser les limites */
+  }
+}
 
 @media (max-width: 768px) {
   .presentation {
     display: grid;
-    width: 100%;
+    flex-wrap: nowrap;
+    gap: initial;
     grid-gap: 10px;
-  }  
+    justify-content: initial;
+    align-items: initial;
+    align-content: initial;
+    padding-left: initial;
+    padding-right: initial;
+    width: initial;
+  }
 
-  .presentation > div {
+  .presentation>div {
     border: 2px solid rgb(233, 171, 88);
     border-radius: 5px;
   }
 
   h1 {
+    position: initial;
     top: 9vw;
     text-align: center;
     font-size: 2rem;
   }
+
   .icon-item {
     position: relative;
     border: red solid 1px;
   }
 
   .animated-left-cubes-group {
+    display: initial;
+    justify-content: initial;
     position: relative;
     top: 20%;
     right: -55%;
@@ -161,19 +245,24 @@ h1 {
   .footer {
     position: relative;
     display: flex;
-    justify-content: flex-end; 
-    align-items: flex-end; /* Place l'image en bas de la div */
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* Place l'image en bas de la div */
     width: 100%;
-    height: auto; /* Hauteur fixe ou auto */
-    border: 1px solid black; /* Pour visualiser les limites */
+    height: auto;
+    /* Hauteur fixe ou auto */
+    border: 1px solid black;
+    /* Pour visualiser les limites */
   }
-  
+
 }
 
 @media (max-width: 640px) {
   .presentation {
     display: grid;
-    width: 100%;
+    justify-content: initial;
+    width: initial;
+    align-items: initial;
   }
 
 
@@ -227,7 +316,7 @@ h1 {
 
   .footer {
     display: none;
-   }
+  }
 
 }
 
