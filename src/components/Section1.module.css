@@ -1,69 +1,60 @@
 .section {
   /* background: linear-gradient(to bottom, #15aba8 75%, #acd2d1 85%, #dfdfdf 95%); */
   background-color: #2a5e5d;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
-  text-align: center;
-  min-height: 100vh;
 }
 
 .presentation {
-  height: 75%;
-}
-
-.footer {
-  height: 30%;
-}
-
-.container {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  /* border: 2px solid red; */
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.footerheader-container {
-  display: flex;
-  justify-content: center;  /* Centre horizontalement */
-  align-items: center;      /* Centre verticalement */
-  width: 100%;              /* Prend la largeur totale de l'écran */
-  height: 100%;             /* S'adapte à la hauteur du conteneur */
+  width: 100vh;
+  height: 100vh;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   position: relative;
-  
+  border: 1px solid rgb(0, 255, 157);
+  margin: 0 auto;
+}
+
+/* .footer {
+  height: 30%;
+} */
+
+/* .footerheader-container {
+  display: flex;
+  justify-content: center;
+  /* Centre horizontalement */
+/* align-items: center; */
+/* Centre verticalement */
+/* width: 100%; */
+/* Prend la largeur totale de l'écran */
+/* height: 100%; */
+/* S'adapte à la hauteur du conteneur */
+/* position: relative; */
+/*
 }
 
 .footerheader-svg {
-  width: 100vw;             /* Prend toute la largeur de l'écran */
-  height: auto;             /* Ajuste la hauteur automatiquement */
-}
-
-.icon-item, .img-item, .text-item {
-  flex: 1 1 300px; /* Flex-grow, flex-shrink, and a basis of 300px */
-  margin: 10px; /* Space between items */
-  justify-content: center;
-  gap: 10px;
-}
-
-@media (min-width: 768px) {
-  .icon-item {
-    flex-direction: row;
-  }
-}
+  width: 100vw;
+  /* Prend toute la largeur de l'écran */
+/* height: auto; */
+/* Ajuste la hauteur automatiquement */
+/* } */
 
 .animated-left-cubes-group {
   position: absolute;
-  transform: translate(-32vw, 17vw);
+  top: 120%;
+  right: -80%;
 }
 
 .animated-right-cubes-group {
   position: absolute;
-  transform: translate(10vw, 5vw);
+  top: 120%;
+  left: -80%;
 }
 
 .animated-white-cube,
@@ -83,28 +74,9 @@
 }
 
 h1 {
-  position: absolute;
+  position: relative;
   color: white;
-  left: 20vw;
-  font-size: 2.2rem;
-  padding-right: 1vw;
-}
-
-h2 {
-  position: absolute;
-  right: 25vw;
-  top: 30vw;
-  color: white;
-  font-size: 3rem;
-  font-weight: lighter;
-}
-
-.title-1 {
-  top: 9vw;
-}
-
-.title-2 {
-  top: 12vw;
+  font-size: 2.5rem;
 }
 
 .word-1 {
@@ -117,47 +89,180 @@ h2 {
   font-weight: lighter;
 }
 
-/* Tablette */
+/*
+@media (max-width: 1955px) {
+ 
+}
+
+@media (max-width: 1536px) {
+ 
+}
+
+@media (max-width: 1280px) {
+  
+}
+
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 1.75rem; /* Taille pour les tablettes */
-  }
-  .vincent-character {
-    width: 10vw;
-    height: auto;
-  }
-  h2 {
-    font-size: 1.5rem; /* Taille pour les tablettes */
-  }
+ 
 }
+*/
 
-/* Mobile */
 @media (max-width: 768px) {
+  .presentation {
+    display: grid;
+    width: 100%;
+    grid-gap: 10px;
+  }  
+
+  .presentation > div {
+    border: 2px solid rgb(233, 171, 88);
+    border-radius: 5px;
+  }
+
   h1 {
-    font-size: 1.5rem; /* Taille pour les mobiles */
+    top: 9vw;
+    text-align: center;
+    font-size: 2rem;
   }
-  h2 {
-    font-size: 1.25rem; /* Taille pour les mobiles */
-  }.vincent-character {
-    width: 10vw;
-    height: auto;
+  .icon-item {
+    position: relative;
+    border: red solid 1px;
   }
-  .section {
-    flex-direction: column;
+
+  .animated-left-cubes-group {
+    position: relative;
+    top: 20%;
+    right: -55%;
   }
+
+  .animated-left-cubes-group img {
+    width: 35vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .animated-right-cubes-group {
+    position: relative;
+    top: 20%;
+    left: 5%;
+  }
+
+  .animated-right-cubes-group img {
+    width: 30vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .vincent-character {
+    width: 15vw;
+    top: 50%;
+  }
+
+  .footer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end; /* Place l'image en bas de la div */
+    width: 100%;
+    height: auto; /* Hauteur fixe ou auto */
+    border: 1px solid black; /* Pour visualiser les limites */
+  }
+  
 }
 
-/* Petit mobile */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .presentation {
+    display: grid;
+    width: 100%;
+  }
+
+
+  .text-item {
+    border: 1px solid red;
+  }
+
+  .img-item {
+    border: 1px solid red;
+  }
+
   h1 {
-    font-size: 1.25rem; /* Taille pour les petits mobiles */
+    top: 5vw;
+    text-align: center;
+    font-size: 1.55rem;
   }
-  h2 {
-    font-size: 1rem; /* Taille pour les petits mobiles */
-  }.vincent-character {
-    width: 10vw;
-    height: auto;
+
+  .icon-item {
+    position: relative;
+    border: red solid 1px;
   }
+
+  .animated-left-cubes-group {
+    position: relative;
+    top: 20%;
+    right: -55%;
+  }
+
+  .animated-left-cubes-group img {
+    width: 35vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .animated-right-cubes-group {
+    position: relative;
+    top: 20%;
+    left: 5%;
+  }
+
+  .animated-right-cubes-group img {
+    width: 30vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+
+  .vincent-character {
+    width: 15vw;
+    top: 50%;
+  }
+
+  .footer {
+    display: none;
+   }
+
 }
 
+@media (max-width: 475px) {
+  h1 {
+    top: 10vw;
+    text-align: center;
+    font-size: 1rem;
+  }
 
+  .animated-left-cubes-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animated-left-cubes-group img {
+    width: 35vw;
+    max-height: 100%;
+    position: relative;
+    border: 2px solid red;
+    left: -50%;
+  }
+
+  .animated-right-cubes-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animated-right-cubes-group img {
+    width: 30vw;
+    max-height: 100%;
+    border: 2px solid red;
+  }
+}
