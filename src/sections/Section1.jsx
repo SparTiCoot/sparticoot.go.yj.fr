@@ -1,24 +1,44 @@
 import React, { useEffect } from "react";
 import anime from "animejs";
 import styles from "./Section1.module.css";
-import footerCubes from "../assets/images/footerCubes.svg";
-import fiveColorFulCubes from "../assets/images/fiveColorFulCubes.svg";
-import fourColorFulCubes from "../assets/images/fourColorFulCubes.svg";
+import { FooterCubesSvg } from "../components/footerCubesSvg";
+import { FiveColorFulCubesSvg } from "../components/fiveColorFulCubesSvg";
+import { FourColorFulCubesSvg } from "../components/fourColorFulCubesSvg";
 
 const Section1 = () => {
   useEffect(() => {
     anime({
       targets: `.${styles["vincent-character"]}`,
-      translateY: [-10, 10], // Flottement
+      translateY: ["-5vh"],
       direction: "alternate",
       easing: "easeInOutSine",
       loop: true,
-      duration: 2000,
+      duration: 1500,
     });
 
     anime({
-      targets: `.${styles["animated-white-cube"]} path`,
-      translateY: [-20, 0],
+      targets: "#animated-white-cube",
+      translateY: [-50, -50, 0],
+      direction: "alternate",
+      easing: "easeInOutQuad",
+      loop: true,
+      duration: 3000,
+    });
+
+    anime({
+      targets: "#animated-red-cube",
+      translateY: [100, 0],
+      direction: "alternate",
+      easing: "easeInOutQuad",
+      loop: true,
+      duration: 2000,
+      transformOrigin: "center center",
+    });
+
+    anime({
+      targets: "#animated-beige-cube",
+      translateX: [50, 0],
+      translateY: [30, -20],
       direction: "alternate",
       easing: "easeInOutQuad",
       loop: true,
@@ -26,8 +46,8 @@ const Section1 = () => {
     });
 
     anime({
-      targets: `.${styles["animated-pink-cube"]} path`,
-      translateY: [-20, 0],
+      targets: "#animated-pink-cube",
+      translateY: [-250, 0],
       direction: "alternate",
       easing: "easeInOutQuad",
       loop: true,
@@ -39,18 +59,22 @@ const Section1 = () => {
     <div className={styles["section"]}>
       <section className={styles["presentation"]}>
         <div className={styles["text-item"]}>
-          <h1 className={styles["title-1"]}>
+          <h1
+            className={`${styles["title-1"]} ${styles["title-presentation"]}`}
+          >
             <span className={styles["word-1"]}>Hello</span>{" "}
             <span className={styles["word-2"]}>there !</span>
           </h1>
-          <h1 className={styles["title-2"]}>
+          <h1
+            className={`${styles["title-2"]} ${styles["title-presentation"]}`}
+          >
             <span className={styles["word-2"]}>I'm</span>{" "}
             <span className={styles["word-1"]}>Vincent VILFEU</span>
           </h1>
         </div>
         <div className={styles["icon-item"]}>
           <div className={styles["animated-left-cubes-group"]}>
-            <img src={fiveColorFulCubes} alt="five cubes" />
+            <FiveColorFulCubesSvg />
           </div>
         </div>
         <div className={styles["img-item"]}>
@@ -63,20 +87,19 @@ const Section1 = () => {
         <div className={styles["icon-item"]}>
           {" "}
           <div className={styles["animated-right-cubes-group"]}>
-            <img src={fourColorFulCubes} alt="five cubes" />
+            <FourColorFulCubesSvg />
           </div>
         </div>
         <div className={styles["text-item"]}>
-          <h1>
+          <h1 className={styles["title-dev-junior"]}>
             Developer
             <br /> Junior
           </h1>
         </div>
         <div className={styles["footer"]}>
-          <img src={footerCubes} alt="footer cubes" />
+          <FooterCubesSvg />
         </div>
       </section>
-     
     </div>
   );
 };

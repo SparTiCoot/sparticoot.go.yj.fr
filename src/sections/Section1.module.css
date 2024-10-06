@@ -1,70 +1,49 @@
 .section {
-  /* background: linear-gradient(to bottom, #15aba8 75%, #acd2d1 85%, #dfdfdf 95%); */
-  background-color: #2a5e5d;
+  background: linear-gradient(to bottom, #15aba8 60%, #4bbdb9 75%, #b781cf 95%);
   width: 100%;
-  height: 100%;
+  height: 80%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  overflow: visible;
 }
 
 .presentation {
+  padding-top: 50px;
   width: 100vh;
   height: 100vh;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   position: relative;
-  border: 1px solid rgb(0, 255, 157);
+  /* border: 1px solid rgb(0, 255, 157); */
   margin: 0 auto;
+  overflow: visible;
 }
 
-/* .footer {
-  height: 30%;
-} */
-
-/* .footerheader-container {
-  display: flex;
-  justify-content: center;
-  /* Centre horizontalement */
-/* align-items: center; */
-/* Centre verticalement */
-/* width: 100%; */
-/* Prend la largeur totale de l'écran */
-/* height: 100%; */
-/* S'adapte à la hauteur du conteneur */
-/* position: relative; */
-/*
+.img-item {
+  width: 100%;
+  height: 10px;
 }
 
-.footerheader-svg {
-  width: 100vw;
-  /* Prend toute la largeur de l'écran */
-/* height: auto; */
-/* Ajuste la hauteur automatiquement */
-/* } */
+.icon-item {
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow: visible;
+}
 
 .animated-left-cubes-group {
   position: absolute;
-  top: 120%;
-  right: -80%;
+  margin-top: 5%;
 }
 
-.animated-right-cubes-group {
-  position: absolute;
-  top: 120%;
-  left: -80%;
-}
-
-.animated-white-cube,
-.animated-pink-cube,
-.vincent-character {
-  transform-origin: center;
+.animated-left-cubes-group svg,
+.animated-right-cubes-group svg {
+  overflow: visible;
 }
 
 .vincent-character {
-  transform-origin: center;
   width: 15vw;
   height: auto;
   position: absolute;
@@ -89,23 +68,16 @@ h1 {
   font-weight: lighter;
 }
 
-/*
-@media (max-width: 1955px) {
- 
+.section,
+.presentation,
+.icon-item {
+  overflow: visible;
 }
-
-@media (max-width: 1536px) {
- 
-}
-
-@media (max-width: 1280px) {
-  
-}
-*/
 
 @media (max-width: 1024px),
 (min-width: 1024px) {
   .presentation {
+    /* border: 2px solid red; */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -114,22 +86,31 @@ h1 {
     align-content: space-between;
     padding-left: 3rem;
     padding-right: 3rem;
+    overflow: visible;
+    gap: 50px;
   }
 
-  .presentation>div {
+  .title-presentation {
+    text-align: end;
+    right: 25px;
+  }
+
+  .title-dev-junior {
+    text-align: start;
+  }
+
+  /* .presentation > div {
     border: 2px solid rgb(160, 109, 43);
     border-radius: 5px;
-  }
+  } */
 
   .text-item {
-    flex-grow: 1;
-    text-align: center;
-  }
-  .img-item {
-    flex-basis: 100%
+    padding: 0% 50px;
+    width: 40%;
   }
 
   .icon-item {
+    width: 50%;
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -137,46 +118,36 @@ h1 {
   .vincent-character {
     width: 15vw;
     top: 50%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .animated-left-cubes-group {
     display: flex;
-    justify-content: center;
     position: relative;
+    justify-content: center;
     top: initial;
     right: initial;
-  }
-
-  .animated-left-cubes-group img {
-    width: 20vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .animated-right-cubes-group {
+    display: flex;
     position: relative;
+    justify-content: center;
     top: initial;
     left: initial;
-  }
-
-  .animated-right-cubes-group img {
-    width: 20vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .footer {
-    position: relative;
     display: flex;
+    position: relative;
     justify-content: flex-end;
     align-items: flex-end;
-    /* Place l'image en bas de la div */
     width: 100%;
     height: auto;
-    /* Hauteur fixe ou auto */
-    border: 1px solid black;
-    /* Pour visualiser les limites */
   }
 }
 
@@ -194,47 +165,35 @@ h1 {
     width: initial;
   }
 
-  .presentation>div {
+  /* .presentation > div {
     border: 2px solid rgb(233, 171, 88);
     border-radius: 5px;
-  }
+  } */
 
   h1 {
     position: initial;
     top: 9vw;
-    text-align: center;
     font-size: 2rem;
   }
 
   .icon-item {
     position: relative;
-    border: red solid 1px;
+    /* border: red solid 1px; */
   }
 
   .animated-left-cubes-group {
-    display: initial;
-    justify-content: initial;
-    position: relative;
     top: 20%;
     right: -55%;
-  }
-
-  .animated-left-cubes-group img {
-    width: 35vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .animated-right-cubes-group {
     position: relative;
     top: 20%;
     left: 5%;
-  }
-
-  .animated-right-cubes-group img {
-    width: 30vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .vincent-character {
@@ -242,36 +201,32 @@ h1 {
     top: 50%;
   }
 
+  .title-dev-junior,
+  .title-presentation {
+    text-align: center;
+  }
+
+  .text-item {
+    padding: 0% 0%;
+  }
+
   .footer {
     position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    /* Place l'image en bas de la div */
     width: 100%;
     height: auto;
-    /* Hauteur fixe ou auto */
-    border: 1px solid black;
-    /* Pour visualiser les limites */
   }
-
 }
 
 @media (max-width: 640px) {
   .presentation {
-    display: grid;
-    justify-content: initial;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     width: initial;
-    align-items: initial;
-  }
-
-
-  .text-item {
-    border: 1px solid red;
-  }
-
-  .img-item {
-    border: 1px solid red;
+    align-items: center;
   }
 
   h1 {
@@ -282,31 +237,25 @@ h1 {
 
   .icon-item {
     position: relative;
-    border: red solid 1px;
+    /* border: red solid 1px; */
   }
 
   .animated-left-cubes-group {
     position: relative;
-    top: 20%;
-    right: -55%;
-  }
-
-  .animated-left-cubes-group img {
-    width: 35vw;
+    top: initial;
+    right: initial;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    width: 35vw;
   }
 
   .animated-right-cubes-group {
     position: relative;
     top: 20%;
     left: 5%;
-  }
-
-  .animated-right-cubes-group img {
-    width: 30vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    width: 30vw;
   }
 
   .vincent-character {
@@ -317,10 +266,10 @@ h1 {
   .footer {
     display: none;
   }
-
 }
 
 @media (max-width: 475px) {
+
   h1 {
     top: 10vw;
     text-align: center;
@@ -332,14 +281,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .animated-left-cubes-group img {
     width: 35vw;
     max-height: 100%;
     position: relative;
-    border: 2px solid red;
-    left: -50%;
+    /* border: 2px solid red; */
   }
 
   .animated-right-cubes-group {
@@ -347,11 +292,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .animated-right-cubes-group img {
     width: 30vw;
     max-height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 }
