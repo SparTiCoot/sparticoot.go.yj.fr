@@ -8,5 +8,50 @@
 
 body {
     font-family: 'Bitter', sans-serif;
-    color: #333; /* Couleur du texte */
+    color: #333;
+    /* Couleur du texte */
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    /* Empêche le défilement du body */
+}
+
+.snap-container {
+    height: 100vh;
+    /* Chaque section prend la hauteur de la fenêtre */
+    overflow-y: scroll;
+    /* Permet le défilement vertical */
+    scroll-snap-type: y mandatory;
+    /* Active le scroll-snap sur l'axe Y */
+    scroll-behavior: smooth;
+    /* Animation douce lors du passage de page */
+    -ms-overflow-style: none;
+    /* Internet Explorer et Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.section {
+    scroll-snap-align: start;
+    /* Aligne chaque section au début lorsqu'elle apparaît */
+    height: 100vh;
+    /* Assure que chaque section prend toute la hauteur de la page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+/* Pour Chrome, Safari et Opera */
+.snap-container::-webkit-scrollbar {
+    display: none;
 }
