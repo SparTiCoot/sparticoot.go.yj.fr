@@ -1,4 +1,4 @@
-export class Repos {
+export default class Repos {
     constructor(id, name, html_url) {
         if (!id || !name || !html_url) {
             throw new Error("Invalid repository data");

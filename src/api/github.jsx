@@ -32,3 +32,5 @@ const fetchUserRepos = async (username) => {
     throw error;
   }
 };
+
+export default fetchUserRepos;

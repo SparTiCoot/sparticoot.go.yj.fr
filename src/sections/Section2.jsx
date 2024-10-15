@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import fetchUserRepos from "../api/github.jsx"
 import anime from "animejs";
 import styles from "./Section2.module.css";
 
