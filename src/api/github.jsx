@@ -25,7 +25,14 @@ const fetchUserRepos = async (username) => {
   try {
     const response = await axios.get(`${BASE_URL}/${username}/repos`);
     return response.data.map(
-      (repo) => new Repos(repo.id, repo.name, repo.html_url)
+      (repo) =>
+        new Repos(
+          repo.id,
+          repo.name,
+          repo.html_url,
+          repo.description,
+          repo.language
+        )
     );
   } catch (error) {
     console.error("Error fetching repos:", error);

@@ -1,9 +1,43 @@
 .section {
-  background: linear-gradient(to bottom, #15aba8 60%, #4bbdb9 75%, #b781cf 95%);
+  background: linear-gradient(
+    to bottom,
+    #dfdfdf 45%,
+    #debbc4 80%,
+    #dc92a6 90%,
+    #d94169 100%
+  );
   width: 100%;
   height: 100vh;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: visible;
+}
+
+.animated-projects-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 2px solid red;
+}
+
+.repo-info {
+  position: relative; /* Pour pouvoir le positionner */
+  width: 230px;
+  height: auto;
+}
+
+.repo-info > h2,
+p,
+a {
+  font-size: calc(6px + 1vw);
+  transform: rotate(40deg) skew(45deg, -10deg); /* ajustez ces valeurs */
+  transform-origin: top left; /* optionnel pour ajuster l'origine */
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+a:visited, a:focus, a:hover {
+  color: black;
 }
