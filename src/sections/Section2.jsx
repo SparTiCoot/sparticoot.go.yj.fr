@@ -5,185 +5,127 @@ import { ProjectsDisplaySvg } from "../components/projectsDisplaySVG";
 import { DiamondSvg } from "../components/diamondSvg";
 import styles from "./Section2.module.css";
 
-const Section2 = () => {
+const useGithubRepos = (username) => {
   const [repos, setRepos] = useState([]);
-  const [error, setError] = useState(false);
-  const [selectedRepo, setSelectedRepo] = useState(null); // État pour stocker le dépôt sélectionné
   const [loading, setLoading] = useState(true);
-  const [diamondPosition, setDiamondPosition] = useState({ left: 0, top: 0 });
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetchUserRepos("Sparticoot")
+    fetchUserRepos(username)
       .then((data) => {
-        console.log("Données chargées :", data); // Vérifie ici si les dépôts sont chargés
         setRepos(data);
         setLoading(false);
       })
       .catch(() => setError(true));
+  }, [username]);
 
-    // Mettre à jour les batteries et les plateformes seulement après le chargement des repos
-  }, []);
+  return { repos, loading, error };
+};
+
+const getCenterCoordinates = (element) => {
+  const { left, top, width, height } = element.getBoundingClientRect();
+  return { centerX: left + width / 2, centerY: top + height / 2 };
+};
+
+const positionElement = (element, left, top) => {
+  if (element) {
+    element.style.left = `${left}px`;
+    element.style.top = `${top}px`;
+    element.style.transform = "translate(-65%, -50%)";
+  }
+};
+
+const animateElement = (targetClass) => {
+  anime({
+    targets: `.${targetClass}`,
+    translateY: [{ value: 0 }, { value: -20 }],
+    scale: [{ value: 1.2 }, { value: 1 }],
+    duration: 2000,
+    easing: "easeInOutSine",
+    loop: true,
+    direction: "alternate",
+  });
+};
+
+const deactivateAllPlatforms = (platforms) => {
+  platforms.forEach((platform) => {
+    const pathElement = platform.querySelector("path");
+    if (pathElement) pathElement.setAttribute("fill", "#474143");
+  });
+};
+
+const handleBatteryClick = (index, platform, platforms, repos, setSelectedRepo, setDiamondPosition) => {
+  deactivateAllPlatforms(platforms);
+
+  const selectedRepo = repos[index];
+  setSelectedRepo(selectedRepo);
+
+  if (platform instanceof SVGElement) {
+    const pathElementPlatform = platform.querySelector("path");
+    if (pathElementPlatform) {
+      pathElementPlatform.setAttribute("fill", "#04BAB6");
+
+      const { left, top, width, height } = platform.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
+
+      setDiamondPosition({ left: centerX - 50, top: centerY - 150 });
+    }
+  }
+};
+
+const initSVGElements = (repos, setSelectedRepo, setDiamondPosition) => {
+  const batteryElements = Array.from(document.querySelectorAll('[id^="battery-"]')).sort(
+    (a, b) => parseInt(a.id.split("-")[1]) - parseInt(b.id.split("-")[1])
+  );
+  const platforms = Array.from(document.querySelectorAll('[id^="platform-"]')).sort(
+    (a, b) => parseInt(a.id.split("-")[1]) - parseInt(b.id.split("-")[1])
+  );
+
+  batteryElements.forEach((batteryElement, index) => {
+    const platform = platforms[index];
+    const handleClick = () =>
+      handleBatteryClick(index, platform, platforms, repos, setSelectedRepo, setDiamondPosition);
+
+    batteryElement.addEventListener("click", handleClick);
+
+    batteryElement.cleanup = () => batteryElement.removeEventListener("click", handleClick);
+  });
+
+  return batteryElements;
+};
+
+const Section2 = () => {
+  const { repos, loading, error } = useGithubRepos("Sparticoot");
+  const [selectedRepo, setSelectedRepo] = useState(null);
+  const [diamondPosition, setDiamondPosition] = useState({ left: 0, top: 0 });
 
   useEffect(() => {
-    if (repos.length > 0) {
-      const batteryElements = Array.from(
-        document.querySelectorAll('[id^="battery-"]')
-      ).sort((a, b) => {
-        const aIndex = parseInt(a.id.split("-")[1], 10); // Récupère l'index de la batterie
-        const bIndex = parseInt(b.id.split("-")[1], 10);
-        return aIndex - bIndex; // Trie par ordre croissant
+    if (repos.length === 0) return;
+    const batteryElements = initSVGElements(repos, setSelectedRepo, setDiamondPosition);
+
+    return () => {
+      batteryElements.forEach((batteryElement) => {
+        if (batteryElement.cleanup) batteryElement.cleanup();
       });
-
-      const platforms = Array.from(
-        document.querySelectorAll('[id^="platform-"]')
-      ).sort((a, b) => {
-        const aIndex = parseInt(a.id.split("-")[1], 10); // Récupère l'index de la plateforme
-        const bIndex = parseInt(b.id.split("-")[1], 10);
-        return aIndex - bIndex; // Trie par ordre croissant
-      });
-
-      console.log(repos);
-
-      if (batteryElements.length > 0 && platforms.length > 0) {
-        batteryElements.forEach((batteryElement, index) => {
-          const platformId = `platform-${index + 1}`;
-          const platform = document.getElementById(platformId);
-
-          if (platform) {
-            const handleClick = () =>
-              handleClickBattery(index, platform, platforms, repos);
-
-            batteryElement.addEventListener("click", handleClick);
-
-            // Nettoyage lors du démontage du composant
-            batteryElement.cleanup = () => {
-              batteryElement.removeEventListener("click", handleClick);
-            };
-          }
-        });
-      }
-
-      // Nettoyage des écouteurs
-      return () => {
-        batteryElements.forEach((batteryElement) => {
-          if (batteryElement.cleanup) {
-            batteryElement.cleanup();
-          }
-        });
-      };
-    }
+    };
   }, [repos]);
 
-  const deactivateAll = (platforms) => {
-    platforms.forEach((platform) => {
-      if (platform && platform instanceof SVGElement) {
-        const pathElement = platform.querySelector("path");
-        if (pathElement) {
-          pathElement.setAttribute("fill", "#474143");
-        }
-      }
-    });
-  };
+  useEffect(() => {
+    if (!selectedRepo) return;
 
-  const handleClickBattery = (index, platform, platforms, repos) => {
-    deactivateAll(platforms);
-    console.log(`Battery ${index + 1} clicked!`);
-    const repo = repos[index]; // Récupère le dépôt associé à la batterie cliquée
-    setSelectedRepo(repo); // Met à jour l'état du dépôt sélectionné
-    console.log("repos :" + repo);
-    if (repo) {
-      console.log("repos :" + repo);
-      setSelectedRepo(repo); // Met à jour l'état du dépôt sélectionné
-    }
-    if (platform && platform instanceof SVGElement) {
-      const pathElementPlatform = platform.querySelector("path");
-      if (pathElementPlatform) {
-        pathElementPlatform.setAttribute("fill", "#04BAB6");
-
-        // Récupère les coordonnées de la plateforme sélectionnée
-        const rect = platform.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        // Ajuste pour placer le diamant légèrement au-dessus (par exemple, 20px)
-      const offsetAboveY = 150; // Ajuste cette valeur selon la hauteur souhaitée
-      const offsetAboveX = 50; // Ajuste cette valeur selon la hauteur souhaitée
-
-      // Positionne le DiamondSvg légèrement au-dessus de la plateforme
-      setDiamondPosition({ left: centerX - offsetAboveX, top: centerY - offsetAboveY });
-
-      
-      }
-    } else {
-      console.error("L'élément sélectionné n'est pas un élément SVG.");
-    }
-  };
-
-  const handleDiamondClick = () => {
-    if (selectedRepo) {
-      window.open(selectedRepo.html_url, "_blank");
-    }
-  };
-
-  const animateDiamond = () => {
     const diamondElement = document.querySelector(`.${styles["diamond"]}`);
-    
-    // Animation de flottement
-    anime({
-      targets: diamondElement,
-      translateY: [
-        { value: 0, duration: 600, easing: 'easeInOutSine' },
-        { value: -10, duration: 600, easing: 'easeInOutSine' }
-      ],
-      loop: true,
-      direction: 'alternate',
-      scale: [
-        { value: 1.1, duration: 500, easing: 'easeInOutSine' },
-        { value: 1, duration: 300, easing: 'easeInOutSine' }
-      ],
-      duration: 3000,
-      delay: anime.stagger(200),
-      complete: () => diamondElement.style.left = `${diamondPosition.left}px`,
-      complete: () => diamondElement.style.top = `${diamondPosition.top}px`
-    });
-  };
-  
-   // Positionne le diamant une fois que selectedRepo est mis à jour
-   useEffect(() => {
-    if (selectedRepo) {
-      const diamondElement = document.querySelector(`.${styles["diamond"]}`);
-      if (diamondElement) {
-        diamondElement.style.left = `${diamondPosition.left}px`;
-        diamondElement.style.top = `${diamondPosition.top}px`;
-        diamondElement.style.transform = "translate(-50%, -50%)"; // Centre le diamant
-      }
-      animateDiamond();
-    }
-  }, [selectedRepo, diamondPosition]); // Exécute l'effet quand selectedRepo ou diamondPosition changent
-
+    positionElement(diamondElement, diamondPosition.left, diamondPosition.top);
+    animateElement(styles["diamond"]);
+  }, [selectedRepo, diamondPosition]);
 
   useEffect(() => {
-    if (selectedRepo) {
-      const tvPath = document.querySelector("#tv path");
-      if (tvPath) {
-        const rect = tvPath.getBoundingClientRect();
+    if (!selectedRepo) return;
 
-        // Calcul du centre du tvPath
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        // Repositionnement dynamique de la div
-        const repoInfoDiv = document.querySelector(`.${styles["repo-info"]}`);
-        if (repoInfoDiv) {
-          repoInfoDiv.style.position = "absolute"; // S'assure que la div est positionnée en absolute
-          setTimeout(() => {
-            repoInfoDiv.style.left = `${centerX}px`; // Position X
-            repoInfoDiv.style.top = `${centerY}px`; // Position Y
-            repoInfoDiv.style.transform = "translate(-65%, -55%)"; // Centrer la div par rapport à son point médian
-          }, 0); // Vous pouvez ajuster le délai si nécessaire
-        }
-      }
-    }
+    const tvPath = document.querySelector("#tv path");
+    const { centerX, centerY } = getCenterCoordinates(tvPath);
+    const repoInfoDiv = document.querySelector(`.${styles["repo-info"]}`);
+    positionElement(repoInfoDiv, centerX, centerY);
   }, [selectedRepo]);
 
   if (error) {
@@ -196,20 +138,20 @@ const Section2 = () => {
         <div className={styles["animated-projects-display"]}>
           <ProjectsDisplaySvg />
           {selectedRepo && (
-            <div className={styles["repo-info"]}>
-              <h2>{selectedRepo.name.replace(/-/g, " ")}</h2>
-              <p>
-                {selectedRepo.description || ""}
-                <br />
-                <br />
-                Langage: {selectedRepo.language || ""}
-              </p>
-            </div>
-          )}
-           {selectedRepo && (
-            <div className={styles["diamond"]} onClick={handleDiamondClick}>
-              <DiamondSvg />
-            </div>
+            <>
+              <div className={styles["repo-info"]}>
+                <h2>{selectedRepo.name.replace(/-/g, " ")}</h2>
+                <p>
+                  {selectedRepo.description || ""}
+                  <br />
+                  <br />
+                  Langage: {selectedRepo.language || ""}
+                </p>
+              </div>
+              <div className={styles["diamond"]} onClick={() => window.open(selectedRepo.html_url, "_blank")}>
+                <DiamondSvg />
+              </div>
+            </>
           )}
         </div>
       </section>

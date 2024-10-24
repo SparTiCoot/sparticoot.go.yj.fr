@@ -32,10 +32,10 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
         </g>
         <rect width="58.9887" height="58.9887" transform="matrix(0.866044 -0.499967 0.866044 0.499967 0.000488281 30.4707)" fill="url(#paint1_linear_167_4)" />
         <g filter="url(#filter1_d_167_4)">
-            <path d="M52.019 30.5996C42.1877 36.2816 36.2025 39.7284 26.3711 45.4104" stroke="#FFC636" stroke-width="2" />
+            <path d="M52.019 30.5996C42.1877 36.2816 36.2025 39.7284 26.3711 45.4104" stroke="#FFC636" strokeWidth="2" />
         </g>
         <g filter="url(#filter2_d_167_4)">
-            <path d="M26.3711 45.4106C26.3711 55.85 26.3711 61.3417 26.3711 71.7811" stroke="#FFC636" stroke-width="2" />
+            <path d="M26.3711 45.4106C26.3711 55.85 26.3711 61.3417 26.3711 71.7811" stroke="#FFC636" strokeWidth="2" />
         </g>
         <g filter="url(#filter3_d_167_4)">
             <path d="M27.0934 45.4107C27.0934 45.8097 26.7699 46.1332 26.3709 46.1332C25.9719 46.1332 25.6484 45.8097 25.6484 45.4107C25.6484 45.0117 25.9719 44.6882 26.3709 44.6882C26.7699 44.6882 27.0934 45.0117 27.0934 45.4107Z" fill="#FFC636" />
@@ -71,8 +71,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
         <path d="M344.891 481.506L268.457 523.891L268.457 481.507L344.891 439.121L344.891 481.506Z" fill="#F2D0A7" />
         <path d="M306.675 417.477L230.244 460.764L268.459 481.505L344.89 439.12L306.675 417.477Z" fill="#D9BA94" />
         <defs>
-            <filter id="filter0_d_167_4" x="19.1196" y="40.7144" width="63.6309" height="55.6833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter0_d_167_4" x="19.1196" y="40.7144" width="63.6309" height="55.6833" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -81,8 +81,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_167_4" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
-            <filter id="filter1_d_167_4" x="21.8706" y="29.7339" width="34.6489" height="24.5422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter1_d_167_4" x="21.8706" y="29.7339" width="34.6489" height="24.5422" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -91,8 +91,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_167_4" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
-            <filter id="filter2_d_167_4" x="21.3711" y="45.4106" width="10" height="34.3704" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter2_d_167_4" x="21.3711" y="45.4106" width="10" height="34.3704" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -101,8 +101,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_167_4" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
-            <filter id="filter3_d_167_4" x="21.6484" y="44.6882" width="9.44482" height="9.44507" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter3_d_167_4" x="21.6484" y="44.6882" width="9.44482" height="9.44507" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -111,8 +111,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_167_4" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
-            <filter id="filter4_d_167_4" x="21.2871" y="70.3362" width="10.1675" height="10.1675" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter4_d_167_4" x="21.2871" y="70.3362" width="10.1675" height="10.1675" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -121,8 +121,8 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_167_4" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
-            <filter id="filter5_d_167_4" x="47.25" y="29.8792" width="9.44482" height="9.51709" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter5_d_167_4" x="47.25" y="29.8792" width="9.44482" height="9.51709" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                 <feOffset dy="4" />
                 <feGaussianBlur stdDeviation="2" />
@@ -132,21 +132,21 @@ export const GraduateSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_167_4" result="shape" />
             </filter>
             <linearGradient id="paint0_linear_167_4" x1="63.2171" y1="58.0538" x2="27.8157" y2="103.57" gradientUnits="userSpaceOnUse">
-                <stop offset="0.23" stop-color="#555052" />
-                <stop offset="0.54661" stop-color="#888083" />
-                <stop offset="0.865" stop-color="#BBB0B4" />
+                <stop offset="0.23" stopColor="#555052" />
+                <stop offset="0.54661" stopColor="#888083" />
+                <stop offset="0.865" stopColor="#BBB0B4" />
             </linearGradient>
             <linearGradient id="paint1_linear_167_4" x1="35.6203" y1="1.91989" x2="27.8792" y2="29.2897" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#BBB0B4" />
-                <stop offset="0.2" stop-color="#9F9699" />
-                <stop offset="1" stop-color="#555052" />
+                <stop stopColor="#BBB0B4" />
+                <stop offset="0.2" stopColor="#9F9699" />
+                <stop offset="1" stopColor="#555052" />
             </linearGradient>
             <linearGradient id="paint2_linear_167_4" x1="196.542" y1="280.674" x2="244.194" y2="315.56" gradientUnits="userSpaceOnUse">
-                <stop offset="0.208957" stop-color="#007572" />
-                <stop offset="0.335332" stop-color="#00817E" />
-                <stop offset="0.567135" stop-color="#009692" />
-                <stop offset="0.748147" stop-color="#00A7A3" />
-                <stop offset="1" stop-color="#00DBD5" />
+                <stop offset="0.208957" stopColor="#007572" />
+                <stop offset="0.335332" stopColor="#00817E" />
+                <stop offset="0.567135" stopColor="#009692" />
+                <stop offset="0.748147" stopColor="#00A7A3" />
+                <stop offset="1" stopColor="#00DBD5" />
             </linearGradient>
         </defs>
     </svg>
