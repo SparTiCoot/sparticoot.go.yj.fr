@@ -106,10 +106,11 @@ const Section2 = () => {
         const centerY = rect.top + rect.height / 2;
 
         // Ajuste pour placer le diamant légèrement au-dessus (par exemple, 20px)
-      const offsetAbove = 100; // Ajuste cette valeur selon la hauteur souhaitée
+      const offsetAboveY = 150; // Ajuste cette valeur selon la hauteur souhaitée
+      const offsetAboveX = 50; // Ajuste cette valeur selon la hauteur souhaitée
 
       // Positionne le DiamondSvg légèrement au-dessus de la plateforme
-      setDiamondPosition({ left: centerX, top: centerY - offsetAbove });
+      setDiamondPosition({ left: centerX - offsetAboveX, top: centerY - offsetAboveY });
 
       
       }
@@ -178,7 +179,7 @@ const Section2 = () => {
           setTimeout(() => {
             repoInfoDiv.style.left = `${centerX}px`; // Position X
             repoInfoDiv.style.top = `${centerY}px`; // Position Y
-            repoInfoDiv.style.transform = "translate(-45%, -45%)"; // Centrer la div par rapport à son point médian
+            repoInfoDiv.style.transform = "translate(-65%, -55%)"; // Centrer la div par rapport à son point médian
           }, 0); // Vous pouvez ajuster le délai si nécessaire
         }
       }
