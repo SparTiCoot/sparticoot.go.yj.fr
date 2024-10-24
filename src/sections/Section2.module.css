@@ -15,6 +15,7 @@
 }
 
 .animated-projects-display {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,21 +24,26 @@
 }
 
 .repo-info {
-  position: relative; /* Pour pouvoir le positionner */
-  width: 230px;
-  height: auto;
+  position: absolute; /* Pour pouvoir le positionner */
+  width: 250px;
+  height: 400px;
 }
 
 .repo-info > h2,
 p,
 a {
-  font-size: calc(6px + 1vw);
-  transform: rotate(40deg) skew(45deg, -10deg); /* ajustez ces valeurs */
+  font-size: 1rem;
+  transform: rotate(40deg) skew(40deg, -9deg); /* ajustez ces valeurs */
   transform-origin: top left; /* optionnel pour ajuster l'origine */
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 a:visited, a:focus, a:hover {
   color: black;
+}
+
+.diamond {
+  position: absolute;
+  transition: top 0.3s ease, left 0.3s ease;
 }

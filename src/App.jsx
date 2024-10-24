@@ -29,7 +29,7 @@ function App() {
     };
 
     const container = document.querySelector(".snap-container");
-    container.addEventListener("wheel", handleScroll);
+    container.addEventListener("wheel", handleScroll, { passive: true });
 
     return () => {
       container.removeEventListener("wheel", handleScroll);

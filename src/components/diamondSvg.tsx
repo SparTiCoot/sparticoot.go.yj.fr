@@ -4,13 +4,13 @@ import { SVGProps } from "react";
 export const DiamondSvg = (props: SVGProps<SVGSVGElement>) => (
     <svg width="48" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_13_356)" id="diamond">
-            <path d="M9.65001 4.83604L24.0001 0.0527046L38.35 4.83604V14.362L24 18.3481L9.65001 14.362V4.83604Z" fill="url(#paint0_diamond_13_356)" stroke="url(#paint1_linear_13_356)" stroke-width="0.1" />
-            <path d="M4.05 23.8151V9.62305L9.55 4.90876V14.3865L4.05 23.8151Z" fill="#027875" stroke="url(#paint2_linear_13_356)" stroke-width="0.1" />
-            <path d="M43.9501 23.8151V9.62305L38.4501 4.90876V14.3865L43.9501 23.8151Z" fill="url(#paint3_linear_13_356)" stroke="url(#paint4_linear_13_356)" stroke-width="0.1" />
-            <path d="M4.07459 23.9714L9.62376 14.4585L23.95 18.438V30.3315L4.07459 23.9714Z" fill="url(#paint5_linear_13_356)" stroke="url(#paint6_linear_13_356)" stroke-width="0.1" />
-            <path d="M43.9255 23.9714L38.3763 14.4585L24.0501 18.438V30.3315L43.9255 23.9714Z" fill="#027875" stroke="url(#paint7_linear_13_356)" stroke-width="0.1" />
-            <path d="M23.95 30.4365V43.8793L4.18119 24.1105L23.95 30.4365Z" fill="#027875" stroke="url(#paint8_linear_13_356)" stroke-width="0.1" />
-            <path d="M24.0501 30.4365V43.8793L43.8189 24.1105L24.0501 30.4365Z" fill="url(#paint9_linear_13_356)" stroke="url(#paint10_linear_13_356)" stroke-width="0.1" />
+            <path d="M9.65001 4.83604L24.0001 0.0527046L38.35 4.83604V14.362L24 18.3481L9.65001 14.362V4.83604Z" fill="url(#paint0_diamond_13_356)" stroke="url(#paint1_linear_13_356)" strokeWidth="0.1" />
+            <path d="M4.05 23.8151V9.62305L9.55 4.90876V14.3865L4.05 23.8151Z" fill="#027875" stroke="url(#paint2_linear_13_356)" strokeWidth="0.1" />
+            <path d="M43.9501 23.8151V9.62305L38.4501 4.90876V14.3865L43.9501 23.8151Z" fill="url(#paint3_linear_13_356)" stroke="url(#paint4_linear_13_356)" strokeWidth="0.1" />
+            <path d="M4.07459 23.9714L9.62376 14.4585L23.95 18.438V30.3315L4.07459 23.9714Z" fill="url(#paint5_linear_13_356)" stroke="url(#paint6_linear_13_356)" strokeWidth="0.1" />
+            <path d="M43.9255 23.9714L38.3763 14.4585L24.0501 18.438V30.3315L43.9255 23.9714Z" fill="#027875" stroke="url(#paint7_linear_13_356)" strokeWidth="0.1" />
+            <path d="M23.95 30.4365V43.8793L4.18119 24.1105L23.95 30.4365Z" fill="#027875" stroke="url(#paint8_linear_13_356)" strokeWidth="0.1" />
+            <path d="M24.0501 30.4365V43.8793L43.8189 24.1105L24.0501 30.4365Z" fill="url(#paint9_linear_13_356)" stroke="url(#paint10_linear_13_356)" strokeWidth="0.1" />
             <path d="M18.4 5.20005C17.2 5.20005 17.2 5.20005 17.2 6.40005C16.8687 6.40005 16.8 5.73142 16.8 5.40005C16.8 5.06868 17.2 4.80005 17.4 4.80005C17.7314 4.80005 18.4 4.86868 18.4 5.20005Z" fill="#D9D9D9" />
             <path d="M21.6 5.20005C20.4 5.20005 20.4 5.20005 20.4 6.40005C20.0686 6.40005 20 5.73142 20 5.40005C20 5.06868 20.4 4.80005 20.6 4.80005C20.9314 4.80005 21.6 4.86868 21.6 5.20005Z" fill="#D9D9D9" />
             <path d="M20 10.0001C18.8 10.0001 18.8 10.0001 18.8 11.2001C18.4686 11.2001 18.4 10.5315 18.4 10.2001C18.4 9.86873 18.8 9.6001 19 9.6001C19.3313 9.6001 20 9.66873 20 10.0001Z" fill="#D9D9D9" />
@@ -39,49 +39,49 @@ export const DiamondSvg = (props: SVGProps<SVGSVGElement>) => (
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_13_356" result="shape" />
             </filter>
             <radialGradient id="paint0_diamond_13_356" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.4 -7.2) rotate(146.31) scale(34.6133 54.1773)">
-                <stop offset="0.169236" stop-color="#18C4C0" />
-                <stop offset="0.488516" stop-color="#18C1BD" />
-                <stop offset="1" stop-color="#117A78" />
+                <stop offset="0.169236" stopColor="#18C4C0" />
+                <stop offset="0.488516" stopColor="#18C1BD" />
+                <stop offset="1" stopColor="#117A78" />
             </radialGradient>
             <linearGradient id="paint1_linear_13_356" x1="24" y1="0" x2="24" y2="18.4" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint2_linear_13_356" x1="6.8" y1="4.80005" x2="6.8" y2="24" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint3_linear_13_356" x1="41.2001" y1="4.80005" x2="41.2001" y2="24" gradientUnits="userSpaceOnUse">
-                <stop offset="0.595" stop-color="#04BAB6" />
-                <stop offset="1" stop-color="#025452" />
+                <stop offset="0.595" stopColor="#04BAB6" />
+                <stop offset="1" stopColor="#025452" />
             </linearGradient>
             <linearGradient id="paint4_linear_13_356" x1="41.2001" y1="4.80005" x2="41.2001" y2="24" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint5_linear_13_356" x1="19.2" y1="16.8" x2="10.4" y2="25.6" gradientUnits="userSpaceOnUse">
-                <stop offset="0.46" stop-color="#00AAA6" />
-                <stop offset="1" stop-color="#004442" />
+                <stop offset="0.46" stopColor="#00AAA6" />
+                <stop offset="1" stopColor="#004442" />
             </linearGradient>
             <linearGradient id="paint6_linear_13_356" x1="14" y1="14.4" x2="14" y2="30.4" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint7_linear_13_356" x1="34.0001" y1="14.4" x2="34.0001" y2="30.4" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint8_linear_13_356" x1="14" y1="24" x2="14" y2="44" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
             <linearGradient id="paint9_linear_13_356" x1="20.8001" y1="24" x2="36.8001" y2="43.2" gradientUnits="userSpaceOnUse">
-                <stop offset="0.127088" stop-color="#00AAA6" />
-                <stop offset="1" stop-color="#004442" />
+                <stop offset="0.127088" stopColor="#00AAA6" />
+                <stop offset="1" stopColor="#004442" />
             </linearGradient>
             <linearGradient id="paint10_linear_13_356" x1="34.0001" y1="24" x2="34.0001" y2="44" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#023E30" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#023E30" />
             </linearGradient>
         </defs>
     </svg>
