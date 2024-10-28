@@ -69,7 +69,7 @@ const handleBatteryClick = (index, platform, platforms, repos, setSelectedRepo, 
       const centerX = left + width / 2;
       const centerY = top + height / 2;
 
-      setDiamondPosition({ left: centerX - 50, top: centerY - 150 });
+      setDiamondPosition({ left: centerX -40, top: centerY - 150 });
     }
   }
 };

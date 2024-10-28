@@ -21,17 +21,19 @@
   padding-left: 3rem;
   padding-right: 3rem;
   position: relative;
-  /* border: 1px solid rgb(0, 255, 157); */
   margin: 0 auto;
   overflow: visible;
 }
 
-
 .graduate-display {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    /* border: 2px solid red; */
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.sopraSteria {
+  position: absolute; /* Assurez-vous d'avoir ce style si nécessaire */
+  /* Autres styles */
+}
