@@ -33,7 +33,69 @@
   height: 100%;
 }
 
-.sopraSteria {
-  position: absolute; /* Assurez-vous d'avoir ce style si nécessaire */
-  /* Autres styles */
+.sopraSteria,
+.ratp,
+.certificate,
+.graduate {
+  position: absolute; /* Positionnez ces éléments si nécessaire */
+}
+
+.licence,
+.bts,
+.bac {
+  position: absolute;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.licence {
+  top: 10%; /* Ajustez la valeur selon vos besoins */
+  left: 40%; /* Ajustez la valeur selon vos besoins */
+}
+
+.bts {
+  top: 30%; /* Ajustez la valeur selon vos besoins */
+  left: 55%; /* Ajustez la valeur selon vos besoins */
+}
+
+.bac {
+  top: 60%; /* Ajustez la valeur selon vos besoins */
+  left: 25%; /* Ajustez la valeur selon vos besoins */
+}
+
+@media (max-width: 768px) {
+  .licence {
+    top: 15%; /* Ajustez la valeur selon vos besoins */
+    left: 30%; /* Ajustez la valeur selon vos besoins */
+  }
+
+  .bts {
+    top: 30%; /* Ajustez la valeur selon vos besoins */
+    left: 65%; /* Ajustez la valeur selon vos besoins */
+  }
+
+  .bac {
+    top: 60%; /* Ajustez la valeur selon vos besoins */
+    left: 5%; /* Ajustez la valeur selon vos besoins */
+  }
+}
+
+@media (max-width: 740px) {
+  .licence,
+  .bts,
+  .bac {
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .licence,
+  .bts,
+  .bac {
+    position: absolute;
+    font-size: 1rem;
+    text-align: center;
+  }
 }
