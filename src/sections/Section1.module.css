@@ -27,18 +27,33 @@
 
 .icon-item {
   position: relative;
-  padding-left: 5%;
-  padding-right: 5%;
-  overflow: visible;
 }
 
-.animated-left-cubes-group {
+.animated-polygon-group {
   position: absolute;
-  margin-top: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
-.animated-left-cubes-group svg,
-.animated-right-cubes-group svg {
+
+.title-dev-junior {
+  z-index: 10;
+  position: absolute;
+  top: 75%; /* Place le texte verticalement */
+  left: 75%; /* Place le texte horizontalement */
+  transform: translate(-50%, -50%); /* Centre le texte précisément */
+}
+
+.title-presentation {
+  z-index: 10;
+  position: absolute;
+  top:42%; /* Place le texte verticalement */
+  left: -30%; /* Place le texte horizontalement */
+  transform: translate(-50%, -50%); /* Centre le texte précisément */
+}
+
+.animated-polygon-group svg {
   overflow: visible;
 }
 
@@ -54,7 +69,7 @@
 h1 {
   position: relative;
   color: white;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .word-1 {
@@ -73,8 +88,7 @@ h1 {
   overflow: visible;
 }
 
-@media (max-width: 1024px),
-(min-width: 1024px) {
+@media (max-width: 1024px), (min-width: 1024px) {
   .presentation {
     /* border: 2px solid red; */
     width: 100%;
@@ -103,13 +117,12 @@ h1 {
     border: 2px solid rgb(160, 109, 43);
     border-radius: 5px;
   } */
-
+  /*
   .text-item {
     padding: 0% 2.5rem;
   }
-
+*/
   .icon-item {
-    width: 50%;
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -118,35 +131,6 @@ h1 {
     width: 15vw;
     top: 50%;
     /* border: 2px solid red; */
-  }
-
-  .animated-left-cubes-group {
-    display: flex;
-    position: relative;
-    justify-content: right;
-    top: initial;
-    right: 25%;
-    max-height: 100%;
-    /* border: 2px solid red; */
-  }
-
-  .animated-right-cubes-group {
-    display: flex;
-    position: relative;
-    justify-content: left;
-    top: initial;
-    left: initial;
-    max-height: 100%;
-    /* border: 2px solid red; */
-  }
-
-  .footer {
-    display: flex;
-    position: relative;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-    height: auto;
   }
 }
 
@@ -173,27 +157,12 @@ h1 {
     position: initial;
     top: 9vw;
     font-size: 2rem;
-    margin: auto
+    margin: auto;
   }
 
   .icon-item {
     position: relative;
     /* border: red solid 1px; */
-  }
-
-  .animated-left-cubes-group {
-    top: 20%;
-    right: -90%;
-    max-height: 100%;
-    /* border: 2px solid red; */
-  }
-
-  .animated-right-cubes-group {
-    position: relative;
-    top: 20%;
-    left: 5%;
-    max-height: 100%;
-    /* border: 2px solid red; */
   }
 
   .vincent-character {
@@ -208,15 +177,6 @@ h1 {
 
   .text-item {
     padding: 0% 0%;
-  }
-
-  .footer {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-    height: auto;
   }
 }
 
@@ -240,43 +200,20 @@ h1 {
     /* border: red solid 1px; */
   }
 
-  .animated-left-cubes-group {
-    position: relative;
-    top: initial;
-    right: initial;
-    max-height: 100%;
-    /* border: 2px solid red; */
-    width: 35vw;
-  }
-
-  .animated-right-cubes-group {
-    position: relative;
-    top: 20%;
-    left: 5%;
-    max-height: 100%;
-    /* border: 2px solid red; */
-    width: 30vw;
-  }
-
   .vincent-character {
     width: 15vw;
     top: 50%;
   }
-
-  .footer {
-    display: none;
-  }
 }
 
 @media (max-width: 475px) {
-
   h1 {
     top: 10vw;
     text-align: center;
     font-size: 1rem;
   }
 
-  .animated-left-cubes-group {
+  .animated-polygon-group {
     position: relative;
     display: flex;
     align-items: center;
@@ -284,16 +221,5 @@ h1 {
     width: 35vw;
     max-height: 100%;
     position: relative;
-    /* border: 2px solid red; */
-  }
-
-  .animated-right-cubes-group {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30vw;
-    max-height: 100%;
-    /* border: 2px solid red; */
   }
 }

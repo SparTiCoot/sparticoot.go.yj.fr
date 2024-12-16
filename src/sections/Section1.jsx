@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import styles from "./Section1.module.css";
-import { FooterCubesSvg } from "../components/footerCubesSvg";
-import { FiveColorFulCubesSvg } from "../components/fiveColorFulCubesSvg";
-import { FourColorFulCubesSvg } from "../components/fourColorFulCubesSvg";
+import { PolygonsSvg } from "../components/polygonsSvg";
 
 const Section1 = () => {
   useEffect(() => {
@@ -15,7 +13,7 @@ const Section1 = () => {
       loop: true,
       duration: 1500,
     });
-
+/*
     anime({
       targets: "#animated-white-cube",
       translateY: [-50, -50, 0],
@@ -53,28 +51,21 @@ const Section1 = () => {
       loop: true,
       duration: 2000,
     });
+    */
   }, []);
 
   return (
     <div className={styles["section"]}>
       <section className={styles["presentation"]}>
         <div className={styles["text-item"]}>
-          <h1
-            className={`${styles["title-1"]} ${styles["title-presentation"]}`}
-          >
-            <span className={styles["word-1"]}>Hello</span>{" "}
-            <span className={styles["word-2"]}>there !</span>
-          </h1>
-          <h1
-            className={`${styles["title-2"]} ${styles["title-presentation"]}`}
-          >
-            <span className={styles["word-2"]}>I'm</span>{" "}
-            <span className={styles["word-1"]}>Vincent VILFEU</span>
-          </h1>
+          <h1 className={`${styles["title-presentation"]}`}>
+            Hello there !
+            <br /> I'm Vincent VILFEU
+            </h1>
         </div>
         <div className={styles["icon-item"]}>
-          <div className={styles["animated-left-cubes-group"]}>
-            <FiveColorFulCubesSvg />
+          <div className={styles["animated-polygon-group"]}>
+            <PolygonsSvg />
           </div>
         </div>
         <div className={styles["img-item"]}>
@@ -84,22 +75,16 @@ const Section1 = () => {
             alt="Vincent VILFEU character"
           />
         </div>
-        <div className={styles["icon-item"]}>
-          {" "}
-          <div className={styles["animated-right-cubes-group"]}>
-            <FourColorFulCubesSvg />
-          </div>
-        </div>
         <div className={styles["text-item"]}>
           <h1 className={styles["title-dev-junior"]}>
             Developer
             <br /> Junior
           </h1>
         </div>
-        <div className={styles["footer"]}>
-          <FooterCubesSvg />
-        </div>
       </section>
+      <div>
+        <PolygonsSvg />
+      </div>
     </div>
   );
 };

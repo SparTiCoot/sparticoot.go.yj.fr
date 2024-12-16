@@ -33,7 +33,7 @@ export const FourColorFulCubesSvg = (props: SVGProps<SVGSVGElement>) => (
       <path d="M409 234L245 329V423L409 329V234Z" fill="#FFCF57" />
       <path d="M245 329L164 281V376L245 423V329Z" fill="#F2BC31" />
     </g>
-    <g id="animated-orange-cube-2">
+    <g id="animated-purple-cube">
       <path
         d="M243.983 51.7897L326.984 0.532592L411.125 48.0325L326.984 99.7897L243.983 51.7897Z"
         fill="#F35F40"
