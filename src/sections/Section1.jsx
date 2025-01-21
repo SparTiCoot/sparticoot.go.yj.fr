@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import styles from "./Section1.module.css";
 import { PolygonsSvg } from "../components/polygonsSvg";
+import vincent_character from "../assets/images/VincentCharacter.png";
 
 const Section1 = () => {
   useEffect(() => {
@@ -71,7 +72,7 @@ const Section1 = () => {
         <div className={styles["img-item"]}>
           <img
             className={styles["vincent-character"]}
-            src="src\assets\images\VincentCharacter.png"
+            src={vincent_character}
             alt="Vincent VILFEU character"
           />
         </div>

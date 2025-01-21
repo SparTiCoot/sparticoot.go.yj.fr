@@ -4,6 +4,7 @@ import anime from "animejs";
 import { ProjectsBatteriesSVG } from "../components/projectsBatteriesSVG";
 import { DiamondSvg } from "../components/diamondSvg";
 import styles from "./Section2.module.css";
+import diamond_png from "../assets/images/Diamond.png";
 
 const useGithubRepos = (username) => {
   const [repos, setRepos] = useState([]);
@@ -212,7 +213,7 @@ const Section2 = () => {
                   Cliquer sur le {" "}
                   <img
                     className={styles["diamond-png"]}
-                    src="src\assets\images\Diamond.png"
+                    src={diamond_png}
                     alt="Vincent VILFEU character"
                   /> {" "}
                   pour voir le projet sur GitHub
