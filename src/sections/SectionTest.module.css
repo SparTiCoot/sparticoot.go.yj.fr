@@ -1,0 +1,127 @@
+.section {
+    background: linear-gradient(to bottom, #15aba8 60%, #4bbdb9 75%, #b781cf 95%);
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    margin: auto;
+}
+
+.top-greeting {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.background-polygons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.presentation {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+
+.presentation>.left-container {
+    max-width: 500px;
+    width: 100%;
+    background: linear-gradient(135deg, #15aba8 0%, #1d9a97 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: white;
+}
+
+.title-presentation {
+    text-align: center;
+}
+
+.description-presentation {
+    margin-top: 1.5rem;
+}
+
+
+.presentation>.right-container {
+    position: relative;
+    width: 300px;
+    overflow: visible;
+    transform: translateX(-60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(21, 171, 168, 0.5) 0%, rgba(75, 189, 185, 0.8) 100%);
+    border-radius: 50%;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(21, 171, 168, 0.2);
+}
+
+.img-item>img {
+    width: 90%;
+    aspect-ratio: 1;
+    object-fit: fill;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.img-item img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width: 15vw;
+    height: auto;
+}
+
+.vincent-character {
+    width: 15vw;
+    height: auto;
+}
+
+.background-polygons svg {
+    overflow: visible;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 90%;
+    padding: 15px 20px;
+    background: rgb(181, 120, 207, 0.8);
+    border-radius: 8px;
+    z-index: 1;
+}

@@ -86,7 +86,7 @@ const handleBatteryClick = (
     `.${styles["border-animation"]}`
   );
   if (existingBorder) {
-    existingBorder.remove();
+    existingBorder.parentNode.removeChild(existingBorder);
   }
 };
 
@@ -183,6 +183,10 @@ const Section2 = () => {
 
     console.log("Dépôt affiché dans la div 'repo-info':", selectedRepo); // Log pour vérifier le dépôt qui s'affiche
     const diamondElement = document.querySelector(`.${styles["diamond"]}`);
+    if (diamondElement) {
+      positionElement(diamondElement, diamondPosition.left, diamondPosition.top);
+      animateElement(styles["diamond"]);
+    }
     positionElement(diamondElement, diamondPosition.left, diamondPosition.top);
     animateElement(styles["diamond"]);
 

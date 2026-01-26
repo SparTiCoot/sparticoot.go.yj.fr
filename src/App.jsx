@@ -1,46 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Section1 from "./sections/Section1";
 import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
-/*
-import Section4 from './components/Section4';
-*/
+import VerticalPagination from "./components/VerticalPagination";
 import "./main.css";
 
 function App() {
+  const [activeIndex, setActiveIndex] = useState(0); // section 1 au départ
+  const [sectionCount, setSectionCount] = useState(0);
+
   useEffect(() => {
-    const handleScroll = (event) => {
-      const container = document.querySelector(".snap-container");
-      const currentScroll = container.scrollTop;
-      const sectionHeight = window.innerHeight;
-
-      // Calcul de la direction du scroll et de la section suivante/précédente
-      if (event.deltaY > 0) {
-        container.scrollTo({
-          top: currentScroll + sectionHeight,
-          behavior: "smooth",
-        });
-      } else {
-        container.scrollTo({
-          top: currentScroll - sectionHeight,
-          behavior: "smooth",
-        });
-      }
-    };
-
     const container = document.querySelector(".snap-container");
-    container.addEventListener("wheel", handleScroll, { passive: true });
 
-    return () => {
-      container.removeEventListener("wheel", handleScroll);
+    // Récupération automatique du nombre de sections
+    const sections = container.querySelectorAll(".section");
+    setSectionCount(sections.length);
+
+    // Gestion de la pagination active au scroll
+    const onScroll = () => {
+      const index = Math.round(container.scrollTop / window.innerHeight);
+      setActiveIndex(index);
     };
+
+    container.addEventListener("scroll", onScroll);
+    return () => container.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <div className="snap-container">
-      <Section1 />
-      <Section2 />
-      <Section3 />
+      <VerticalPagination activeIndex={activeIndex} count={sectionCount} />
+      <div className="section"><Section1 /></div>
+      <div className="section"><Section2 /></div>
+      <div className="section"><Section3 /></div>
     </div>
   );
 }

@@ -40,17 +40,17 @@
 .title-dev-junior {
   z-index: 10;
   position: absolute;
-  top: 75%; /* Place le texte verticalement */
-  left: 75%; /* Place le texte horizontalement */
-  transform: translate(-50%, -50%); /* Centre le texte précisément */
+  top: 75%;
+  /* Place le texte verticalement */
+  left: 75%;
+  /* Place le texte horizontalement */
+  transform: translate(-50%, -50%);
+  /* Centre le texte précisément */
 }
 
 .title-presentation {
   z-index: 10;
-  position: absolute;
-  top:42%; /* Place le texte verticalement */
-  left: -30%; /* Place le texte horizontalement */
-  transform: translate(-50%, -50%); /* Centre le texte précisément */
+  position: relative;
 }
 
 .animated-polygon-group svg {
@@ -88,7 +88,8 @@ h1 {
   overflow: visible;
 }
 
-@media (max-width: 1024px), (min-width: 1024px) {
+@media (max-width: 1024px),
+(min-width: 1024px) {
   .presentation {
     /* border: 2px solid red; */
     width: 100%;
@@ -105,9 +106,21 @@ h1 {
   }
 
   .title-presentation {
-    text-align: end;
-    right: 1.5rem;
+    position: relative;
+    /* laisse le bloc parent gérer le positionnement */
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
   }
+
+  .description-presentation {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin: 0;
+  }
+
+
 
   .title-dev-junior {
     text-align: start;
@@ -122,6 +135,26 @@ h1 {
     padding: 0% 2.5rem;
   }
 */
+
+  .text-item {
+    position: absolute;
+    top: 30%;
+    /* Ajuste verticalement dans le cadre rouge */
+    left: 10%;
+    /* Marge depuis le bord gauche */
+    max-width: 400px;
+    /* Limite la largeur du bloc texte */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Espace entre le h1 et le p */
+    z-index: 10;
+    color: white;
+    background-color: rgb(183, 129, 207, 0.95);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
   .icon-item {
     padding-left: 5%;
     padding-right: 5%;
@@ -175,8 +208,18 @@ h1 {
     text-align: center;
   }
 
+  .title-presentation {
+    font-size: 1rem;
+  }
+
+  .description-presentation {
+    font-size: 0.9rem;
+  }
+
   .text-item {
-    padding: 0% 0%;
+    width: 350px;
+    padding: 1.2rem;
+    box-sizing: border-box;
   }
 }
 
@@ -195,6 +238,14 @@ h1 {
     font-size: 1.55rem;
   }
 
+  .title-presentation {
+    font-size: 1.5rem;
+  }
+
+  .description-presentation {
+    font-size: 0.8rem;
+  }
+
   .icon-item {
     position: relative;
     /* border: red solid 1px; */
@@ -204,6 +255,12 @@ h1 {
     width: 15vw;
     top: 50%;
   }
+
+  .text-item {
+    width: 300px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 475px) {
@@ -211,6 +268,20 @@ h1 {
     top: 10vw;
     text-align: center;
     font-size: 1rem;
+  }
+
+  .title-presentation {
+    font-size: 1.2rem;
+  }
+
+  .description-presentation {
+    font-size: 0.7rem;
+  }
+
+  .text-item {
+    width: 250px;
+    padding: 0.8rem;
+    box-sizing: border-box;
   }
 
   .animated-polygon-group {

@@ -78,6 +78,62 @@ export const PolygonsSvg = (props: SVGProps<SVGSVGElement>) => {
       direction: "alternate", // Alternance de l'animation
       easing: "easeInOutQuad", // Utilisation d'un easing fluide
     });
+
+    anime({
+      targets: "#animated-Prisme_beige", // Cible le groupe avec l'ID correct
+      translateX: [
+        { value: 80, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+        { value: 80, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+      ],
+      translateY: [
+        { value: -120, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+        { value: -120, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+      ],
+      rotate: [
+        { value: 45, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+        { value: 45, duration: 2500, easing: "easeInOutQuad" },
+        { value: 0, duration: 2500, easing: "easeInOutQuad" },
+      ],
+      loop: true,
+      direction: "alternate",
+      easing: "easeInOutQuad",
+    });
+
+    // Octogone
+    anime({
+      targets: "#animated-Octogone",
+      translateY: [
+        { value: 25, duration: 4000, easing: "easeInOutQuad" },
+        { value: 0, duration: 4000, easing: "easeInOutQuad" },
+      ],
+      rotate: [
+        { value: 360, duration: 8000, easing: "linear" },
+      ],
+      loop: true,
+      direction: "normal",
+    });
+
+    // Grand_Cube
+    anime({
+      targets: "#animated-Grand_Cube",
+      translateY: [
+        { value: 70, duration: 2600, easing: "easeInOutQuad" },
+        { value: 0, duration: 2600, easing: "easeInOutQuad" },
+      ],
+      rotate: [
+        { value: 45, duration: 2600, easing: "easeInOutQuad" },
+        { value: 0, duration: 2600, easing: "easeInOutQuad" },
+      ],
+      loop: true,
+      direction: "alternate",
+    });
+
+   
   }, []);
 
 
@@ -86,7 +142,7 @@ export const PolygonsSvg = (props: SVGProps<SVGSVGElement>) => {
     <svg
       width="1432"
       height="1024"
-      viewBox="0 0 1432 1024"
+      viewBox="-200 0 1632 1024"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

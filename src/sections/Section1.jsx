@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import anime from "animejs";
-import styles from "./Section1.module.css";
+import styles from "./SectionTest.module.css";
 import { PolygonsSvg } from "../components/polygonsSvg";
 import vincent_character from "../assets/images/VincentCharacter.png";
 
@@ -8,82 +8,50 @@ const Section1 = () => {
   useEffect(() => {
     anime({
       targets: `.${styles["vincent-character"]}`,
-      translateY: ["-5vh"],
-      direction: "alternate",
-      easing: "easeInOutSine",
+      translateY: [
+        { value: -50, duration: 1500, easing: "easeInOutSine" },
+        { value: 40, duration: 1500, easing: "easeInOutSine" },
+      ],
       loop: true,
-      duration: 1500,
-    });
-/*
-    anime({
-      targets: "#animated-white-cube",
-      translateY: [-50, -50, 0],
       direction: "alternate",
-      easing: "easeInOutQuad",
-      loop: true,
-      duration: 3000,
     });
-
-    anime({
-      targets: "#animated-red-cube",
-      translateY: [100, 0],
-      direction: "alternate",
-      easing: "easeInOutQuad",
-      loop: true,
-      duration: 2000,
-      transformOrigin: "center center",
-    });
-
-    anime({
-      targets: "#animated-beige-cube",
-      translateX: [50, 0],
-      translateY: [30, -20],
-      direction: "alternate",
-      easing: "easeInOutQuad",
-      loop: true,
-      duration: 2000,
-    });
-
-    anime({
-      targets: "#animated-pink-cube",
-      translateY: [-250, 0],
-      direction: "alternate",
-      easing: "easeInOutQuad",
-      loop: true,
-      duration: 2000,
-    });
-    */
   }, []);
 
   return (
     <div className={styles["section"]}>
+      <div className={styles["top-greeting"]}>
+        Permettez-moi de me présenter, VILFEU Vincent.
+      </div>
       <section className={styles["presentation"]}>
-        <div className={styles["text-item"]}>
+
+        <div className={styles["left-container"]}>
           <h1 className={`${styles["title-presentation"]}`}>
-            Hello there !
-            <br /> I'm Vincent VILFEU
-            </h1>
+            Bienvenue.</h1>
+          <p className={styles["description-presentation"]}>
+            Développeur web junior spécialisé en PHP et Symfony, je conçois des applications
+            web structurées et maintenables, en appliquant les bonnes pratiques de développement.
+          </p>
+          <p className={styles["description-presentation"]}>
+            Je développe également des applications mobiles en Kotlin et Java, afin de proposer
+            des solutions complètes orientées utilisateur. À travers des projets concrets,
+            je renforce mes compétences techniques dans l’objectif d’intégrer une équipe en CDI.
+          </p>
         </div>
-        <div className={styles["icon-item"]}>
-          <div className={styles["animated-polygon-group"]}>
-            <PolygonsSvg />
+
+        <div className={styles["right-container"]}>
+          <div className={styles["img-item"]}>
+            <img
+              className={styles["vincent-character"]}
+              src={vincent_character}
+              alt="Vincent VILFEU character"
+            />
           </div>
         </div>
-        <div className={styles["img-item"]}>
-          <img
-            className={styles["vincent-character"]}
-            src={vincent_character}
-            alt="Vincent VILFEU character"
-          />
-        </div>
-        <div className={styles["text-item"]}>
-          <h1 className={styles["title-dev-junior"]}>
-            Developer
-            <br /> Junior
-          </h1>
-        </div>
       </section>
-      <div>
+      <footer className={styles["footer"]}>
+        Disponible pour un premier CDI – Développeur web & mobile
+      </footer>
+      <div className={styles["background-polygons"]}>
         <PolygonsSvg />
       </div>
     </div>
